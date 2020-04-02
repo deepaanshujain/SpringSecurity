@@ -1,4 +1,4 @@
-package com.dj.entity;
+package com.dj.security.entity;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

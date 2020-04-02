@@ -1,4 +1,4 @@
-package com.dj.entity;
+package com.dj.security.entity;
 
 import javax.persistence.*;
 
