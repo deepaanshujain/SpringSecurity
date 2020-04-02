@@ -6,18 +6,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AppMain {
 
-	@GetMapping("/")
-	public String home() {
-		return("HOME");
-	}
-	
-	@GetMapping("/admin")
-	public String admin() {
-		return("ADMIN");
-	}
-	
-	@GetMapping("/user")
-	public String user() {
-		return("USER");
-	}
+    @GetMapping("/")
+    public String home() {
+        return ("<h1>Welcome</h1>");
+    }
+
+    @GetMapping("/user")
+    public String user() {
+        return ("<h1>Welcome User</h1>");
+    }
+
+    @GetMapping("/admin")
+    public String admin() {
+        return ("<h1>Welcome Admin</h1>");
+    }
 }

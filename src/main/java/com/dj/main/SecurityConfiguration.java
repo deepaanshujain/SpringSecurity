@@ -8,24 +8,30 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
+//	@Autowired
+//	DataSource dataSource;
+	
 	@Autowired
-	DataSource dataSource;
+	UserDetailsService userDetailsService;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.jdbcAuthentication().dataSource(dataSource)
-		.usersByUsernameQuery("Select username, password, status as enabled "
-				+ "From user_master "
-				+ "where username = ?")
-		.authoritiesByUsernameQuery("Select username, authority "
-				+ "From authorities "
-				+ "where username = ?");
+//		auth.jdbcAuthentication().dataSource(dataSource)
+//		.usersByUsernameQuery("Select username, password, status as enabled "
+//				+ "From user_master "
+//				+ "where username = ?")
+//		.authoritiesByUsernameQuery("Select username, authority "
+//				+ "From authorities "
+//				+ "where username = ?");
+		
+		auth.userDetailsService(userDetailsService);
 	}
 
 	@Bean
