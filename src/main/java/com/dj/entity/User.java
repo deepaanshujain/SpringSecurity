@@ -1,4 +1,4 @@
-package com.dj.models;
+package com.dj.entity;
 
 import javax.persistence.*;
 

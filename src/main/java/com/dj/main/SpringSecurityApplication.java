@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = { "com.dj.*" })
-@EntityScan(basePackages = { "com.dj.models" })
-//@ComponentScan(basePackages = { "com.dj.*" })
+@EnableJpaRepositories(basePackages = { "com.dj.repo" })
+@EntityScan(basePackages = { "com.dj.entity" })
+@ComponentScan(basePackages = { "com.dj.*" })
 public class SpringSecurityApplication {
 
 	public static void main(String[] args) {
